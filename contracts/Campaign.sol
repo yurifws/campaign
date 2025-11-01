@@ -29,4 +29,16 @@ contract Campaign {
 
         approvers.push(msg.sender);
     }
+
+    function createRequest(string memory description, uint value, address recipient) public restricted() {
+        Request memory newRequest = Request({
+            description: description,
+            value: value,
+            recipient: recipient,
+            complete: false
+        });
+
+        // alternative instance - Request(description, value, recipient, false);
+        requests.push(newRequest);
+    }
 }
