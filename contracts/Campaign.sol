@@ -7,6 +7,8 @@ contract Campaign {
         uint value;
         address recipient;
         bool complete;
+        uint approvalCount;
+        mapping(address => bool) approvals;
     }
 
     Request[] public requests;
@@ -38,7 +40,6 @@ contract Campaign {
             complete: false
         });
 
-        // alternative instance - Request(description, value, recipient, false);
         requests.push(newRequest);
     }
 }
