@@ -68,7 +68,7 @@ contract Campaign {
         request.approvalCount++;
     }
 
-    function finilizeRequest(uint index) public restricted {
+    function finalizeRequest(uint index) public restricted {
         Request storage request = requests[index];
 
         require(request.approvalCount > (approversCount/2));
